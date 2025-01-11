@@ -1,134 +1,242 @@
 body {
-    background-color: #fff;
-  }
-  .header {
-    background-color: #dc3545;
-    color: white;
-  }
-  .footer {
-    background-color: #dc3545;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
-  .filters {
-    border-right: 1px solid #ddd;
-    padding-right: 20px;
-  }
-  .content {
-    display: flex;
-  }
-  .product-listing {
-    padding-left: 20px;
-  }
-  .search-bar {
-    margin-bottom: 20px;
-  }
-  .badge {
-    background-color: #fff;
-    color: #dc3545;
-  }
-  // .checkbox {
-  //   width: 20px;
-  //   height: 20px;
-  //   border-radius: 50%;
-  //   border: 2px solid #ddd;
-  //   display: inline-block;
-  //   margin-left: auto;
-  //   margin-right: 1em;
-  //   cursor: pointer;
-  // }
-  // .checkbox.checked {
-  //   background-color: #007bff;
-  //   border-color: #007bff;
-  // }
-  .accordion-button::after {
-    // content: '\25BC'; /* Down arrow */
-    font-size: 1rem;
-    margin-left: auto;
-    transition: transform 0.2s;
-  }
-  .accordion-button.collapsed::after {
-    // transform: rotate(180deg); /* Up arrow */
-  }
-  .accordion-collapse{
-    display: block;
-  }
+  background-color: #fff;
+}
 
-  .logo{
-    margin-left: 3em;
-  }
+.header {
+  background-color: #dc3545;
+  color: white;
+}
 
-  .round-checkbox {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    margin-left: auto;
-    margin-right: 1em;
-  }
-  
-  .round-checkbox input {
-    opacity: 0;
-    position: absolute;
-    cursor: pointer;
-  }
-  
-  .checkmark {
-    position: relative;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    transition: background-color 0.3s, border-color 0.3s;
-  }
-  
-  .round-checkbox input:checked ~ .checkmark {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-  
-  .round-checkbox .fa-check {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 12px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .round-checkbox input:checked ~ .fa-check {
-    opacity: 1;
-  }
+.footer {
+  background-color: #dc3545;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
 
-  .applied-filters {
-    display: flex;
-    gap: 10px;
-  }
-  .filter-chip {
-    background-color: lightgray;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-  }
-  .filter-chip i {
-    color: #6c757d;
-  }
-  .filter-chip:hover {
-    background-color: #ced4da;
-  }
+.filters {
+  border-right: 1px solid #ddd;
+  padding-right: 20px;
+}
 
-  /* Pagination styles */
+.content {
+  display: flex;
+}
+
+.product-listing {
+  padding-left: 20px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.badge {
+  background-color: #fff;
+  color: #dc3545;
+}
+
+// .checkbox {
+//   width: 20px;
+//   height: 20px;
+//   border-radius: 50%;
+//   border: 2px solid #ddd;
+//   display: inline-block;
+//   margin-left: auto;
+//   margin-right: 1em;
+//   cursor: pointer;
+// }
+// .checkbox.checked {
+//   background-color: #007bff;
+//   border-color: #007bff;
+// }
+.accordion-button::after {
+  // content: '\25BC'; /* Down arrow */
+  font-size: 1rem;
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+
+.accordion-button.collapsed::after {
+  // transform: rotate(180deg); /* Up arrow */
+}
+
+.accordion-collapse {
+  display: block;
+}
+
+.logo {
+  margin-left: 3em;
+}
+
+.round-checkbox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 1em;
+}
+
+.round-checkbox input {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.round-checkbox input:checked~.checkmark {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.round-checkbox .fa-check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.round-checkbox input:checked~.fa-check {
+  opacity: 1;
+}
+
+.applied-filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-chip {
+  background-color: lightgray;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.filter-chip i {
+  color: #6c757d;
+}
+
+.filter-chip:hover {
+  background-color: #ced4da;
+}
+
+/* Pagination styles */
 .pagination {
   margin: 0;
 }
+
 .page-link {
   cursor: pointer;
+}
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Drawer styles */
+mat-drawer {
+  width: 250px;
+  padding: 16px;
+}
+
+/* Sort button styles */
+button[mat-icon-button] {
+  margin-right: 16px;
+}
+
+/* Product image container */
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Chip label styles */
+.chip-label {
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  /* White background with 50% opacity */
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Orange label for "ON HIGH DEMAND" */
+.orange-label {
+  color: orange;
+}
+
+/* Stock label */
+.stock-label {
+  color: black;
+  bottom: 10px;
+  /* Position below the first label */
+}
+
+/* Footer styles */
+.footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+
+  /* Logo styles */
+  .logo img {
+    max-width: 50%;
+    height: auto;
+  }
+}
+
+
+
+/* Copyright text styles */
+.copyright {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Version text styles */
+.version {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Page links styles */
+.footer-link {
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-link:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+/* List styles */
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-unstyled li {
+  margin-bottom: 8px;
 }

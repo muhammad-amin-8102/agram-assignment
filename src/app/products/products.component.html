@@ -1,39 +1,72 @@
+<div class="d-flex justify-content-end mb-3">
+    <button mat-icon-button (click)="toggleDrawer()">
+        <mat-icon>sort</mat-icon>
+    </button>
+</div>
+
+<!-- Right-side drawer -->
+
+<mat-drawer #drawer position="end" mode="over">
+    <div class="p-3">
+        <h5>Sort By</h5>
+        <button mat-button (click)="sortProducts('asc')">A-Z</button>
+        <button mat-button (click)="sortProducts('desc')">Z-A</button>
+    </div>
+</mat-drawer>
+
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let product of paginatedProducts">
-      <div class="card">
-        <img [src]="product.display_img_url" class="card-img-top" [alt]="product.name">
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.points }} Points</p>
+        <div class="card">
+            <!-- Product image with labels -->
+            <div class="product-image-container">
+                <img [src]="product.display_img_url" class="card-img-top" [alt]="product.name">
+                <!-- Label 1: "ON HIGH DEMAND" -->
+                <div *ngIf="product.quantity && product.quantity < product.low_quantity" class="chip-label orange-label">
+                    ON HIGH DEMAND
+                </div>
+                <!-- Label 2: Number of products left -->
+                <div *ngIf="product.quantity && product.quantity < product.low_quantity" class="chip-label stock-label">
+                    (Only {{ product.quantity }} Rewards Left)
+                </div>
+                <div *ngIf="product.quantity == 0" class="chip-label stock-label">
+                    (Out Of Stock)
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.points }} Points</p>
+                <hr>
+                <p class="card-text">Valid Until {{ product.valid_until | date:'dd-MM-yyyy'}}</p>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  
-  <!-- Pagination and items per page selection -->
-  <div class="d-flex justify-content-between align-items-center mt-4">
+</div>
+
+<!-- Pagination and items per page selection -->
+<div class="d-flex justify-content-between align-items-center mt-4">
     <!-- Items per page selection -->
     <div>
-      <label for="itemsPerPage" class="me-2">Items per page:</label>
-      <select id="itemsPerPage" class="form-select form-select-sm" (change)="changeItemsPerPage($event)">
-        <option *ngFor="let option of itemsPerPageOptions" [value]="option" [selected]="option === itemsPerPage">
-          {{ option }}
-        </option>
-      </select>
+        <label for="itemsPerPage" class="me-2">Items per page:</label>
+        <select id="itemsPerPage" class="form-select form-select-sm" (change)="changeItemsPerPage($event)">
+            <option *ngFor="let option of itemsPerPageOptions" [value]="option" [selected]="option === itemsPerPage">
+                {{ option }}
+            </option>
+        </select>
     </div>
-  
+
     <!-- Pagination controls -->
     <nav>
-      <ul class="pagination">
-        <li class="page-item" [class.disabled]="currentPage === 1">
-          <a class="page-link" (click)="changePage(currentPage - 1)">Previous</a>
-        </li>
-        <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index" [class.active]="currentPage === i + 1">
-          <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>
-        </li>
-        <li class="page-item" [class.disabled]="currentPage === totalPages">
-          <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
-        </li>
-      </ul>
+        <ul class="pagination">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="changePage(currentPage - 1)">Previous</a>
+            </li>
+            <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index"
+                [class.active]="currentPage === i + 1">
+                <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage === totalPages">
+                <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
+            </li>
+        </ul>
     </nav>
-  </div>
+</div>

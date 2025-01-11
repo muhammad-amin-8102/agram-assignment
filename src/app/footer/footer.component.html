@@ -1,3 +1,30 @@
-<footer class="footer mt-3">
-    <p>&copy; 2025 Company Name. All Rights Reserved.</p>
-  </footer>
+<footer class="footer mt-3 py-4">
+  <div class="container">
+    <div class="row">
+      <!-- First Column: Logo and Copyright -->
+      <div class="col-md-4 text-center text-md-start">
+        <div class="logo mb-2">
+          <img src="assets/logo.jpg" alt="Company Logo" height="40">
+        </div>
+        <p class="copyright mb-0">
+          &copy; {{ currentYear }} Company Name. All Rights Reserved.
+        </p>
+      </div>
+
+      <!-- Second Column: Version -->
+      <div class="col-md-4 text-center">
+        <p class="version mb-0">Version 2.2.2</p>
+      </div>
+
+      <!-- Third Column: Page Links -->
+      <div class="col-md-4 text-center text-md-end">
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">About Us</a></li>
+          <li><a href="#" class="footer-link">Contact Us</a></li>
+          <li><a href="#" class="footer-link">Privacy</a></li>
+          <li><a href="#" class="footer-link">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
