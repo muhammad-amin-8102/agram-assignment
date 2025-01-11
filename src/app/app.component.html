@@ -1,8 +1,13 @@
 <div class="container-fluid">
   <app-header></app-header>
   <div class="search-bar py-3">
-    <input type="text" class="form-control" placeholder="Search products...">
+    <input type="text" class="form-control" placeholder="Search products..." [(ngModel)]="searchQuery" (input)="onSearch(searchQuery)">
   </div>
-  <app-content></app-content>
+  <div class="applied-filters py-2 d-flex align-items-center">
+    <h6 class="fw-bold me-3">Applied Filters:</h6>
+    <span class="filter-chip">e-voucher <i class="fas fa-times"></i></span>
+    <span class="filter-chip">Clear Filter <i class="fas fa-times"></i></span>
+  </div>
+  <app-content [searchQuery]="searchQuery"></app-content>
   <app-footer></app-footer>
 </div>

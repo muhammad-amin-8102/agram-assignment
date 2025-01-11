@@ -9,10 +9,10 @@ import { Component } from '@angular/core';
 })
 export class CategoryComponent {
   categories = [
-    { id: 1, name: 'e-voucher', content: 'Content for e-voucher.', checked: false },
-    { id: 2, name: 'products', content: 'Content for products.', checked: false },
-    { id: 3, name: 'Evergreen', content: 'Content for Evergreen.', checked: false },
-    { id: 4, name: 'Fashion & retail', content: 'Content for Fashion & retail.', checked: false },
+    { id: 1, name: 'e-voucher', content: '', checked: false },
+    { id: 2, name: 'products', content: '', checked: false },
+    { id: 3, name: 'Evergreen', content: '', checked: false },
+    { id: 4, name: 'Fashion & retail', content: '', checked: false },
   ];
 
   toggleCheck(item: any) {

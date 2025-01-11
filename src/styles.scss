@@ -28,20 +28,20 @@ body {
     background-color: #fff;
     color: #dc3545;
   }
-  .checkbox {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid #ddd;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: 1em;
-    cursor: pointer;
-  }
-  .checkbox.checked {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
+  // .checkbox {
+  //   width: 20px;
+  //   height: 20px;
+  //   border-radius: 50%;
+  //   border: 2px solid #ddd;
+  //   display: inline-block;
+  //   margin-left: auto;
+  //   margin-right: 1em;
+  //   cursor: pointer;
+  // }
+  // .checkbox.checked {
+  //   background-color: #007bff;
+  //   border-color: #007bff;
+  // }
   .accordion-button::after {
     // content: '\25BC'; /* Down arrow */
     font-size: 1rem;
@@ -54,3 +54,81 @@ body {
   .accordion-collapse{
     display: block;
   }
+
+  .logo{
+    margin-left: 3em;
+  }
+
+  .round-checkbox {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 1em;
+  }
+  
+  .round-checkbox input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  .checkmark {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .round-checkbox input:checked ~ .checkmark {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .round-checkbox .fa-check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .round-checkbox input:checked ~ .fa-check {
+    opacity: 1;
+  }
+
+  .applied-filters {
+    display: flex;
+    gap: 10px;
+  }
+  .filter-chip {
+    background-color: lightgray;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .filter-chip i {
+    color: #6c757d;
+  }
+  .filter-chip:hover {
+    background-color: #ced4da;
+  }
+
+  /* Pagination styles */
+.pagination {
+  margin: 0;
+}
+.page-link {
+  cursor: pointer;
+}

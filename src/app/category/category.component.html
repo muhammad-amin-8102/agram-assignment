@@ -7,7 +7,13 @@
                     {{ item.name }}
                 </button>
             </h2>
-            <div class="checkbox" [class.checked]="item.checked" (click)="toggleCheck(item)"></div>
+            <!-- <div class="checkbox" [class.checked]="item.checked" (click)="toggleCheck(item)">
+            </div> -->
+            <label class="round-checkbox">
+                <input type="checkbox" [class.checked]="item.checked" (click)="toggleCheck(item)">
+                <span class="checkmark"></span>
+                <i class="fas fa-check"></i> 
+              </label>
         </div>
 
         <div [id]="'collapse' + item.id" class="accordion-collapse collapse">
