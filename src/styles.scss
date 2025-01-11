@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #fff;
+  }
+  .header {
+    background-color: #dc3545;
+    color: white;
+  }
+  .footer {
+    background-color: #dc3545;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .filters {
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+  }
+  .content {
+    display: flex;
+  }
+  .product-listing {
+    padding-left: 20px;
+  }
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  .badge {
+    background-color: #fff;
+    color: #dc3545;
+  }
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 1em;
+    cursor: pointer;
+  }
+  .checkbox.checked {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  .accordion-button::after {
+    // content: '\25BC'; /* Down arrow */
+    font-size: 1rem;
+    margin-left: auto;
+    transition: transform 0.2s;
+  }
+  .accordion-button.collapsed::after {
+    // transform: rotate(180deg); /* Up arrow */
+  }
+  .accordion-collapse{
+    display: block;
+  }
